@@ -40,8 +40,22 @@ app.get('/new', function(req, res){
   res.render('pages/new');
 });
 
+app.get('/edit/:params', function(req, res){
+  const id = req.params.params;
+  Task.findOne({"_id": id}, function(err, task){
+    if(err){
+      console.log(err);
+      res.redirect('/');
+    } else {
+      if(task != null){
+        res.render('pages/edit', {task: task});
+      } else {
+        res.redirect('/');
+      }
+    }
+  })
+});
 // ------ POST routes ----------
-
 app.post("/new/task", function(req, res){
   const { task_name: nameTask, task_date: dateTask, task_comment: commentTask } = req.body;
   const task = new Task({
