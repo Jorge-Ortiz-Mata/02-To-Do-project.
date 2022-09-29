@@ -6,28 +6,28 @@
       <%- include('../partials/header'); %>
       <section class="p-32 flex flex-col justify-center items-center">
         <h2 class="font-bold text-3xl text-cyan-900">Add your task:</h2>
-        <form action="/new/task" method="post" class="flex flex-col border-2 border-red-200">
-          <div class="flex flex-col">
-            <div>
-              <label for="task-name">Task's name:</label>
-              <input type="text" name="task_name" id="task_name" class="border-2" placeholder="Buy eggs.">
-            </div>
+        <form action="/new/task" method="post" class="flex flex-col p-10 w-full">
 
-            <div>
-              <label for="task-date">Date to achieve</label>
-              <input type="datetime-local" id="task_date" name="task_date" value="2022-06-12T19:30"
-                                            min="2000-01-01T00:00" max="2050-01-01T00:00" class="border-2">
-            </div>
-
-            <div class="flex flex-col">
-              <label for="task-comment">Comments:</label>
-              <textarea name="task_comment" id="task_comment" cols="30" rows="10" placeholder="Go to the Shopping center"
-                        class="border-2"></textarea>
-            </div>
+          <div class="mb-6">
+            <label for="task_name" class="block mb-2 text-sm font-bold text-cyan-900">Task's name:</label>
+            <input type="email" name="task_name" id="task_name" placeholder="Buy eggs."
+                class="rounded-lg bg-cyan-50 border-2 border-cyan-900 text-sm font-semibold p-2 w-full">
           </div>
 
-          <div class="flex items-center justify-center">
-            <input type="submit">
+          <div class="mb-6">
+            <label for="task_date" class="block mb-2 text-sm font-bold text-cyan-900">Deadline:</label>
+            <input type="date" name="task_date" id="task_date"
+                  class="rounded-lg bg-cyan-50 border-2 border-cyan-900 text-sm font-semibold p-2 w-1/6">
+          </div>
+
+          <div class="flex flex-col items-start mb-6">
+            <label for="task_comment" class="block mb-2 text-sm font-bold text-cyan-900">Comments:</label>
+            <textarea name="task_comment" id="task_comment" cols="30" rows="10" placeholder="Go to the Shopping center"
+                class="rounded-lg bg-cyan-50 border-2 border-cyan-900 text-sm font-semibold p-2 w-full"></textarea>
+          </div>
+
+          <div class="flex justify-center items-center">
+            <input type="submit" class="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg cursor-pointer py-2 px-4" value="Add task">
           </div>
         </form>
       </section>
