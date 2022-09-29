@@ -11,19 +11,29 @@ app.set('view engine', 'ejs');
 // ------ Connect to MongoDB ------
 mongoose.connect('mongodb://mongo_service:27017/toDoProjectDB', { useNewUrlParser: true });
 
+// --- Schema.
 const taskSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
+  },
+  date: {
+    type: String,
+    required: true
+  },
+  comment: {
+    type: String
   }
 });
 
+// --- Model.
 const Task = mongoose.model("Task", taskSchema);
-
 
 // ------- GET routes ------------
 app.get('/', function(req, res){
-  res.render('pages/index');
+  Task.find({}, function(err, allTasks){
+    res.render('pages/index', { tasks: allTasks })
+  })
 });
 
 app.get('/new', function(req, res){
@@ -33,9 +43,15 @@ app.get('/new', function(req, res){
 // ------ POST routes ----------
 
 app.post("/new/task", function(req, res){
-  console.log(req.body);
-  console.log("Hello!!")
-})
+  const { task_name: nameTask, task_date: dateTask, task_comment: commentTask } = req.body;
+  const task = new Task({
+    name: nameTask,
+    date: dateTask,
+    comment: commentTask
+  });
+  task.save();
+  res.redirect('/');
+});
 
 // ------ PORTS -----------------
 app.listen(process.env.PORT || port, () => {
