@@ -12,11 +12,13 @@
       <%- include('../partials/header'); %>
       <section class="p-20 flex flex-col justify-center items-center">
         <h2 class="font-bold text-3xl text-cyan-900">Update task:</h2>
+
         <%- include('../partials/task.ejs', { task: task }) %>
-        <form action="/new/task" method="post" class="flex flex-col px-10 w-full">
+
+        <form action="/update/task/<%= task.id %>" method="post" class="flex flex-col px-10 w-full">
           <div class="mb-6">
             <label for="task_name" class="block mb-2 text-sm font-bold text-cyan-900">Task's name:</label>
-            <input type="email" name="task_name" id="task_name" placeholder="Buy eggs." value="<%= task.name %>"
+            <input type="text" name="task_name" id="task_name" placeholder="Buy eggs." value="<%= task.name %>"
                 class="rounded-lg bg-cyan-50 border-2 border-cyan-900 text-sm font-semibold p-2 w-full">
           </div>
 

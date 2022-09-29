@@ -3,7 +3,10 @@
     <h5 class="font-bold text-lg my-2"><%= task.name %></h5>
     <div class="flex gap-2">
       <a href="/edit/<%= task.id %>" class="text-xs font-semibold py-1 px-2 rounded-lg text-white bg-green-700">Edit</a>
-      <a href="/delete/<%= task.id %>" class="text-xs font-semibold py-1 px-2 rounded-lg text-white bg-red-700">Delete</a>
+      <form action="/delete/<%= task.id %>" method="post" onsubmit="myFunction()">
+        <input type="submit" name="delete_<%= task.id %>" id="delete_<%= task.id %>" value="Delete"
+              class="text-xs font-semibold py-1 px-2 rounded-lg text-white bg-red-700 cursor-pointer">
+      </form>
     </div>
   </div>
   <div class="text-xs">
