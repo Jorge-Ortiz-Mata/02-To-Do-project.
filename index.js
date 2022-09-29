@@ -76,7 +76,11 @@ app.post("/update/task/:id", function(req, res){
 });
 
 // ------ Delete a task ----------
-
+app.post('/delete/:id', function(req, res){
+  const id = req.params.id;
+  Task.deleteOne({"_id": id}).then(function(){}).catch(function(err){ console.log(err) });
+  res.redirect('/');
+});
 // ------ PORTS -----------------
 app.listen(process.env.PORT || port, () => {
   console.log("Restarting.....");
