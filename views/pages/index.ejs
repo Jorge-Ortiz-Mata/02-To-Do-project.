@@ -3,10 +3,10 @@
   <%- include('../partials/head'); %>
   <body>
     <main>
+
       <%- include('../partials/header'); %>
 
-
-      <section class="flex flex-col justify-center items-center p-20">
+      <section class="flex flex-col justify-center items-center px-20 pt-10 pb-5">
         <h1 class="text-5xl font-bold text-cyan-900 my-5">
           02. To Do Project
         </h1>
@@ -35,10 +35,10 @@
 
       <section class="p-5">
         <h3 class="text-2xl text-center font-bold text-cyan-900">My tasks</h3>
-        <div>
+        <div class="flex">
           <% tasks.map(task => { %>
-            <%- include('../partials/task.ejs', {task: task}) %>
-          <% }) %>
+            <%- include('../partials/task.ejs', { task: task }) %>
+          <% }); %>
         </div>
       </section>
     </main>

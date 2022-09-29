@@ -1,20 +1,14 @@
-<div class="">
-  <p>
-    <span>
-      <%= task.name %>
-    </span>
-  </p>
-  <p>
-    <span>
-      <%= task.date %>
-    </span>
-  </p>
-  <p>
-    <span>
-      <%= task.comment %>
-    </span>
-  </p>
+<div class="inline-flex flex-col border-2 rounded-lg p-5 m-5 w-80">
+  <h5 class="font-semibold text-lg my-2"><%= task.name %></h5>
+  <div class="text-xs">
+    Date: <span class="font-semibold"><%= task.date %></span>
+  </div>
+  <hr class="border-2 my-2">
+  <div class="text-sm">
+    <span><%= task.comment %> </span>
+  </div>
 </div>
+
 
 
 
