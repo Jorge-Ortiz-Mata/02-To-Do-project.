@@ -1,14 +1,15 @@
 version: '3.9'
 services:
-  # mongo_service:
-  #   container_name: mongo-container
-  #   image: mongo
-  #   ports:
-  #     - '27017:27017'
-  #   volumes:
-  #     - ./data:/data/db
-  #   env_file:
-  #    - ./env-files/mongo-env.env
+  mongo_service:
+    container_name: mongo-container
+    image: mongo
+    restart: always
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data:/data/db
+    env_file:
+     - ./env-files/mongo-env.env
 
   node_service:
     container_name: node-todo-container
@@ -19,5 +20,5 @@ services:
       - '8000:8000'
     env_file:
       - ./env-files/node-env.env
-    # depends_on:
-    #   - mongo_service
+    depends_on:
+      - mongo_service

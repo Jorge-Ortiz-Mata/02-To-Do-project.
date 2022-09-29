@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 8000;
@@ -6,6 +7,19 @@ const port = 8000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
+
+// ------ Connect to MongoDB ------
+mongoose.connect('mongodb://mongo_service:27017/toDoProjectDB', { useNewUrlParser: true })
+
+const taskSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  }
+});
+
+const Task = mongoose.model("Task", taskSchema);
+
 
 // ------- GET routes ------------
 app.get('/', function(req, res){

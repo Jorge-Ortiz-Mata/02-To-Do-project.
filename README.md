@@ -6,9 +6,23 @@
 
 ## Mongo DB
 
+All the configuration needed in this web application was reviewed using MongoDB docs.
+In order to use Mongo and install it in your project, follow these steps:
+
+1. Install the node packages: `npm install mongoose mongodb`.
+2. Require the mongoose package in your index.js file.
+3. In order to connect with the database on the docker container: `docker exec -it mongo-container mongosh`.
+3. Connect to the database by using this line (development enviroment):
+  ```
+    mongoose.connect("mongodb://localhost:27017/toDoList", { useNewUrlParser: true });
+  ```
+4. Create the Schema for your DB.
+5. Create the model that will communicate with the Schema.
+6. Implement your Querys and enjoy!
+
 ## Tailwind CSS installation.
 
-All the configuration needed to this web aplication was implemented using the Tailwind CSS docs.
+All the configuration needed in this web aplication was implemented using the Tailwind CSS docs.
 In order to install Tailwind CSS in this project, we will need to follow these steps:
 
 1. Install the tailwind css package: `npm install -D tailwindcss`.
