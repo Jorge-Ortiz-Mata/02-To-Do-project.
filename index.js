@@ -18,7 +18,8 @@ app.get('/new', function(req, res){
 
 // ------ POST routes ----------
 
-app.post("/new/task", function(req, re){
+app.post("/new/task", function(req, res){
+  console.log(req.body);
   console.log("Hello!!")
 })
 
