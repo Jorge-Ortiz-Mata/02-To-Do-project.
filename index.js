@@ -9,7 +9,7 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 // ------ Connect to MongoDB ------
-mongoose.connect('mongodb://mongo_service:27017/toDoProjectDB', { useNewUrlParser: true })
+mongoose.connect('mongodb://mongo_service:27017/toDoProjectDB', { useNewUrlParser: true });
 
 const taskSchema = new mongoose.Schema({
   name: {

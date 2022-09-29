@@ -11,14 +11,14 @@ In order to use Mongo and install it in your project, follow these steps:
 
 1. Install the node packages: `npm install mongoose mongodb`.
 2. Require the mongoose package in your index.js file.
-3. In order to connect with the database on the docker container: `docker exec -it mongo-container mongosh`.
 3. Connect to the database by using this line (development enviroment):
   ```
-    mongoose.connect("mongodb://localhost:27017/toDoList", { useNewUrlParser: true });
+  mongoose.connect('mongodb://mongo_service_name:27017/toDoProjectDB', { useNewUrlParser: true });
   ```
 4. Create the Schema for your DB.
 5. Create the model that will communicate with the Schema.
-6. Implement your Querys and enjoy!
+6. In order to connect with the database on the docker container: `docker exec -it mongo-container mongosh`.
+7. Implement your Querys and enjoy!
 
 ## Tailwind CSS installation.
 
