@@ -8,13 +8,24 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 // ------- GET routes ------------
-app.get('/', function(req, res) {
+app.get('/', function(req, res){
   res.render('pages/index');
 });
 
+app.get('/new', function(req, res){
+  res.render('pages/new');
+});
+
+// ------ POST routes ----------
+
+app.post("/new/task", function(req, re){
+  console.log("Hello!!")
+})
+
+// ------ PORTS -----------------
 app.listen(process.env.PORT || port, () => {
   console.log("Restarting.....");
   console.log("It is working!! Yeah!!");
-})
+});
 
 

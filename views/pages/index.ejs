@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/output.css">
-    <title>To-Do Project.</title>
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-</body>
+  <%- include('../partials/head'); %>
+  <body>
+    <main>
+      <%- include('../partials/header'); %>
+
+      <section class="flex flex-col justify-center items-center p-20">
+        <h1 class="text-5xl font-bold text-cyan-900 my-5">
+          02. To Do Project
+        </h1>
+        <p class="text-center my-3 gap-5 flex flex-col">
+          <span class="text-cyan-900">
+            This is the To Do Project and it was built using this stack: <br>
+          </span>
+          <span class="text-cyan-900 font-bold text-2xl">
+            Node JS, Docker, GCP, MongoDB, EJS and Tailwind CSS.
+          </span>
+        </p>
+        <p class="my-2">
+          <span class="text-cyan-900">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Molestias aut incidunt atque perferendis similique quos hic <br>
+            suscipit ullam nostrum, sit reprehenderit cupiditate ea
+            assumenda porro, veritatis consequuntur ipsa? Omnis, voluptate!
+          </span>
+        </p>
+        <div class="mt-5">
+          <a href="/new" class="py-2 px-4 bg-green-700 text-white font-semibold rounded-lg">
+            Add task.
+          </a>
+        </div>
+      </section>
+
+      <section class="p-5">
+        <h3 class="text-2xl text-center font-bold text-cyan-900">My tasks</h3>
+      </section>
+    </main>
+  </body>
 </html>

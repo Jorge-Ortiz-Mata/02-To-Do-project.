@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head'); %>
+  <body>
+    <main>
+      <%- include('../partials/header'); %>
+      <section class="p-32 flex flex-col justify-center items-center">
+        <h2 class="font-bold text-3xl text-cyan-900">Add your task:</h2>
+        <form action="/new/task" method="post" class="flex flex-col border-2 border-red-200">
+          <div class="flex flex-col">
+            <div>
+              <label for="task-name">Task's name:</label>
+              <input type="text" name="task-name" id="task-name" class="border-2" placeholder="Buy eggs.">
+            </div>
+
+            <div>
+              <label for="task-date">Date to achieve</label>
+              <input type="datetime-local" id="task-date" name="task-date" value="2018-06-12T19:30"
+                                            min="2018-06-07T00:00" max="2018-06-14T00:00" class="border-2">
+            </div>
+
+            <div class="flex flex-col">
+              <label for="task-comment">Comments:</label>
+              <textarea name="task-comment" id="task-comment" cols="30" rows="10" placeholder="Go to the Shopping center"
+                        class="border-2"></textarea>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center">
+            <input type="submit">
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
