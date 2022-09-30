@@ -1,9 +1,39 @@
 # To-Do list.
 
+
+## Index.
+
+1. [Docker.](#docker)
+2. [Microsoft Azure.](#microsoft-azure)
+3. [Google Cloud Platform.](#google-cloud-platform)
+4. [Mongo DB.](#mongo-db)
+5. [Tailwind CSS.](#tailwind-css-installation)
+6. [Author.](#author)
+
 ## Docker.
 
+You can find the images in the Docker Hub with the latest version.
+In order to pull the Docker image, go to the next link:
+
+https://hub.docker.com/repository/docker/jorge107/02-to-do-list
+## Microsoft Azure.
+
+I've used Microsoft Azure to deploy the To Do App with the container.
+You can visit the website by clicking on the next link:
+
+https://to-do-node-container-app.redisland-2bf328e9.centralus.azurecontainerapps.io/
+
+You can see all the steps needed to upload this web application on GCP clicking on the next link.
+- [Microsoft Azure.](./docs/azure.md)
 ## Google Cloud Platform.
 
+I've used Google Cloud Platform to deploy the To Do App with the container.
+You can visit the website by clicking on the next link:
+
+https://to-do-node-app-02-xzoakglu6a-uc.a.run.app/
+
+You can see all the steps needed to upload this web application on GCP clicking on the next link.
+- [Google Cloud Platform.](./docs/gcp.md)
 ## Mongo DB
 
 All the configuration needed in this web application was reviewed using MongoDB docs.

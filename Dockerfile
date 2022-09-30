@@ -14,4 +14,6 @@ VOLUME [ "/todo-app/node_modules" ]
 
 COPY . .
 
-CMD [ "nodemon", "index.js" ]
+EXPOSE 8000
+
+CMD [ "node", "index.js" ]
