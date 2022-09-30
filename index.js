@@ -4,20 +4,21 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 8000;
 
+require('dotenv').config();
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 // ------ Connect to MongoDB ------
-mongoose.connect('mongodb://mongo_service:27017/toDoProjectDB', { useNewUrlParser: true });
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@todocluster.4tny3vh.mongodb.net/?retryWrites=true&w=majority`,
+                    { useNewUrlParser: true });
 // --- Schema.
 const taskSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
   },
   date: {
     type: String,
-    required: true
   },
   comment: {
     type: String
@@ -83,7 +84,6 @@ app.post('/delete/:id', function(req, res){
 });
 // ------ PORTS -----------------
 app.listen(process.env.PORT || port, () => {
-  console.log("Restarting.....");
   console.log("It is working!! Yeah!!");
 });
 
